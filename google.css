@@ -1,0 +1,16 @@
+row {
+    margin-top: 20px;
+}
+col {
+    padding: 10px;
+}
+header{
+    align-items: left;
+    align-items: right;
+}
+nav{
+    align-items: left;
+    align-items: right;
+    justify-items: center;
+    
+}

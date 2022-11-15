@@ -1,0 +1,375 @@
+/*==============GOOGLE FONTS===========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+/*============== VARIABLE CSS ===========*/
+:root{
+  --header-height : 3rem;
+  
+       /*============== COLOUR ===========*/  
+ --first-color:#2e4471;
+ --first-color-alt:#1d335f;
+ --title-color:#393939;
+ --text-color:#707070;
+ --text-color-light:#a6a6a6;
+ --body-color:#FBFEFD;
+ --container-color:#fff;
+
+       /*=========== FONT AND TYPOGRAPHY ====*/
+ --body-font:'poppins',sans-serif;
+ --biggest-font-size:2.25 rem;
+ --h1-font-size:1.5 rem;
+ --h2-font-size:1.25 rem;
+ --h3-font-size:1 rem;
+ --normal-font-size:.938 rem;
+ --small-font-size:.813 rem;
+ --smaller-font-size:.75 rem;
+ 
+
+       /*============== FONT WEIGHT ===========*/
+ --font-medium:500;
+ --font-semi-bold:600;
+
+       /*============== MARGINS ===========*/
+ --mb-1:.5 rem;
+ --mb-2: 1 rem;
+ --mb-3:1.5 rem;
+ --mb-4: 2 rem;
+ --mb-5:2.5 rem;
+ --mb-6: 3 rem;
+       /*============== Z INDEX ==========*/
+ --z-tolltip:10;
+ --z-fixed:100;
+}
+@media screen and(min-width:768px)
+{
+ :root{
+    --biggest-font-size:4 rem;
+    --h1-font-size:2.5 rem;
+    --h2-font-size:1.5 rem;
+    --h3-font-size:1.25 rem;
+    --normal-font-size: 1 rem;
+    --small-font-size:.875 rem;
+    --smaller-font-size:.813 rem;     
+     
+ }
+    
+}
+/*============== BASE ==========*/
+*,::before,::after{
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+/*============== VARIABLE DARK THEME ==========*/
+
+/*============== BUTTON DARK/LIGHT ==========*/
+
+body{
+    margin:var(--header-height)0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height:1.6;
+}
+h1,h2,h3,p,ul{
+    margin:0;
+}
+
+ul{
+    padding:0;
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+
+/*============== CLASS CSS =============*/
+
+.section{
+    padding:4 rem 0 2 rem;
+}
+
+.section-title, .section-subtitle{
+    text-align:center;
+}
+.section-title{
+    font-size:var(--h1-font-size);
+color:(--title-color);
+margin-bottom:var(--mb-3);
+}
+
+.section-subtitle{
+    display:block;
+    color:var(--first-color);
+    font-weight:var(--font-medium);
+    margin-bottom:var(--mb-1);
+}
+/*============== LAYOUT ================*/
+.bd-container {
+    max-width:960px;
+    width:calc(100% -2 rem);
+    margin-left:var(--mb-2);
+    margin-right:var(--mb-2);
+}
+.bd-grid{
+    display:grid;
+    gap:1.5rem;
+}
+.l-header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:var(--z-fixed);
+    background-color:var(--body-color);
+}
+
+/*============== NAV ==========*/
+.nav{
+   max-width:1024; 
+   height:var(--header-height);
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+}
+@media screen and(max-width:768px){
+   .nav-menu{
+       position:fixed;
+       top:-100%;
+       left:0;
+       width:100%;
+       padding:1.5 rem 0 1 rem;
+       text-align:center;
+       background-color: var(--body-color);
+       transition:.4s;
+       box-shadow:0 4px 4px rgba(0,0,0,.1);
+       border-radius:0 0 1rem 1rem;
+       z-index:var(--z-fixed);   
+   } 
+}
+.nav__items{
+    margin-bottom:var(--mb-2);
+}
+.nav__link,.nav__logo,.nav__toggle,.nav__shop{
+    color:var(--text-color);
+    font-weight:var(--font-medium);
+}
+.nav__logo:hover{
+    color:var(--first-color);
+}
+.nav__link{
+    transition:.3s;
+}
+.nav__link:hover{
+    color:var(--first-color);
+}
+.nav__toggle,.nav__shop{
+    font-size:1.3rem;
+    cursor:pointer;
+}
+/* show menu */
+.show-menu{
+    top:var(--header-height);
+}
+
+/* activity menu */
+.active-link{
+    color:var(--first-color);
+}
+
+/* change background header */
+ scrollHeader{
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+
+/* scrolltop */
+.scrolltop{
+    position: fixed;
+    right:1rem;
+    bottom:-20%;
+    display: flex;
+    justify-content:center;
+    padding:.3rem;
+    background:var(--first-color);
+    border-radius:.4rem;
+    z-index:var(--tolltip);
+    transition:.4s;
+    visibility:hidden;
+}
+
+.scrolltop:hover{
+    background-color:var(--first-color-alt);
+}
+.scrolltop__icon{
+    font-size:1.8rem;
+    color:var(--body-color);
+}
+
+/* show scrolltop */
+.show-scroll{
+    visibility:visible;
+    bottom:1.5rem;
+}
+
+/*============== HOME ==========*/
+.home__container{
+    height: calc(100vh - var(--header-height)) ; 
+    align-content:center;
+}
+.home__title{
+    font-size: var(--biggest-font-size);
+     color: var(--first-color);
+     margin-bottom: var(--mb-1);
+}
+.home__subtitle{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-4);
+}
+.home__img{
+    width: 300px;
+    justify-self:center;
+}
+
+/*============== BUTTONS ==========*/
+.button{
+    display:inline-block;
+    background-color: var(--first-color);
+    color:#fff;
+    padding:.75rem 1rem;
+    border-radius:.5rem;
+    transition:.3s;
+}
+
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+
+/*============== SLIDESHOW ============*/
+* {box-sizing: border-box;}
+
+/* slideshow container */
+.slideshow-container{
+    max-width: 1000px;
+    height: auto;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by :default */
+.mySlides{
+    display: none;
+}
+
+/* Next & Previous button */
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 75%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--first-color);
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;   
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, next:hover{
+    background-color: var(--first-color-alt);
+    color: var(#fff);
+}
+
+/* Number text (1/3 etc) */
+.numbertext{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dots{
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dots:hover{
+    background-color: #717171;
+}
+
+/* Padding animation */
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.video{
+    width: 850;
+    height: 450px;
+}
+/*============== ABOUT ============*/
+
+
+
+/*============== DETAIL ==========*/
+
+
+
+/*============== PRODUCT ==========*/
+
+
+
+/*============== PARTNERS ==========*/
+
+
+
+/*============== CONTACT US =========*/
+
+
+
+/*============== FOOTER =============*/
+
+
+
+/*============== MEDIA QUERIES =======*/
+
+
+
+/* for tall screen on mobile y dekstop  */
